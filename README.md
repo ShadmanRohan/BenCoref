@@ -2,8 +2,9 @@
 Codes related to the dataset and its associated paper
 
 
-To regenerate the graphs and figures in the paper, copy the jsonl and json files from PreCo and BenCoref datasets into the same folder and run generate.py. Make sure the Nirmala-UI.ff font is intrigated into matplotlib.
+To regenerate the graphs and figures in the paper, run generate.py and pass locations to the jsonl and json files from PreCo and BenCoref datasets. 
+>Make sure the Nirmala-UI.ff font is intrigated into matplotlib.
 
 ```
-!python generate.py BenCoref/Data PreCo_1.0
+!python generate.py path/To/BenCoref path/To/PreCo1.0
 ```

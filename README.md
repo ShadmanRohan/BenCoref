@@ -6,5 +6,5 @@ To regenerate the graphs and figures in the paper, run generate.py and pass loca
 >Make sure the Nirmala-UI.ttf font is intrigated into matplotlib.
 
 ```
-!python generate.py path/to/BenCoref path/to/PreCo1.0
+!python generate.py path/to/BenCoref/Data path/to/PreCo1.0
 ```

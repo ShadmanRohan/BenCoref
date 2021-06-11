@@ -178,9 +178,7 @@ if __name__ == "__main__":
 	print("loading BenCoref......\n")
 	story_df = pd.read_json((bencoref_path+'/story.json'), encoding='utf8')
 	novel_df = pd.read_json((bencoref_path+'/novel.json'), encoding='utf8')
-	biography_df = pd.read_json((bencoref_path+'/biography.json'), encoding='utf8')
-	descriptive_df = pd.read_json((bencoref_path+'/descriptive.json'), encoding='utf8')
-	df_bencoref = pd.concat([biography_df, descriptive_df, novel_df, story_df])
+	df_bencoref = pd.concat([novel_df, story_df])
 	df_bencoref.reset_index(drop=True, inplace=True)
 	df_bencoref = df_bencoref.set_index('id')
 
@@ -223,8 +221,6 @@ if __name__ == "__main__":
 	print("total token in mention PreCo: {}".format(total_mention_token_pre))
 	print("total token in mention BenCoref: {}\n".format(total_mention_token_bn))
 
-	print_mean_std(biography_df, "Biography")
-	print_mean_std(descriptive_df, "Descriptive")
 	print_mean_std(story_df, "Story")
 	print_mean_std(novel_df, "Novel")
 
@@ -257,17 +253,11 @@ if __name__ == "__main__":
 	plt.cla()
 	plt.close()
 
-	data_dict = {"Descriptive":
-	             {"Clusters": 0, "Mentions": 0, "Tokens": 0},
-	             "Biography":
-	             {"Clusters": 0, "Mentions": 0, "Tokens": 0},
-	             "Story":
+	data_dict = {"Story":
 	             {"Clusters": 0, "Mentions": 0, "Tokens": 0},
 	             "Novel":
 	             {"Clusters": 0, "Mentions": 0, "Tokens": 0}
 	            }
-	data_dict = distribution_per_category(descriptive_df, data_dict, 'Descriptive')
-	data_dict = distribution_per_category(biography_df, data_dict, 'Biography')
 	data_dict = distribution_per_category(story_df, data_dict, 'Story')
 	data_dict = distribution_per_category(novel_df, data_dict, 'Novel')
 

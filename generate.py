@@ -30,6 +30,7 @@ def total_token_count(df):
 
 def total_mention_token_count(d):
   total_mention_token = 0
+  if len(d) == 0: return 0
   for key, value in d.items():
     total_mention_token += key*value
   return total_mention_token
@@ -40,6 +41,20 @@ def mention_len_count(df):
     for j in range(len(df['mention_clusters'][i])):
       length = len(df['mention_clusters'][i][j])
       if length != 1:
+        for k in range(length):
+          l = df['mention_clusters'][i][j][k][2]-df['mention_clusters'][i][j][k][1]
+          if l not in mention_len.keys():
+            mention_len[l] = 1
+          else:
+            mention_len[l] += 1
+  return total_mention_token_count(mention_len)
+
+def singleton_mention_len_count(df):
+  mention_len = {}
+  for i in range(len(df)):
+    for j in range(len(df['mention_clusters'][i])):
+      length = len(df['mention_clusters'][i][j])
+      if length == 1:
         for k in range(length):
           l = df['mention_clusters'][i][j][k][2]-df['mention_clusters'][i][j][k][1]
           if l not in mention_len.keys():
@@ -209,8 +224,13 @@ if __name__ == "__main__":
 
 	without_singleton = total_tag_litbank - df_litbank_clusters[1]
 	cluster_without = sum(df_litbank_clusters.values())-df_litbank_clusters[1]
+	total_mention_token_pre_sig = singleton_mention_len_count(df_litbank)
+	total_mention_token_bn_sig = singleton_mention_len_count(df_litbank)
 	total_mention_token_pre = mention_len_count(df_litbank)
 	total_mention_token_bn = mention_len_count(df_bencoref)
+    
+	print("total token in singleton mention LitBank: {}\n".format(total_mention_token_bn))
+	print("total token in singleton mention BenCoref: {}\n".format(total_mention_token_bn))
 
 	print("Without Singleton cluster:")
 	print("total mention (LitBank): {}".format(without_singleton))

@@ -225,12 +225,12 @@ if __name__ == "__main__":
 	without_singleton = total_tag_litbank - df_litbank_clusters[1]
 	cluster_without = sum(df_litbank_clusters.values())-df_litbank_clusters[1]
 	total_mention_token_pre_sig = singleton_mention_len_count(df_litbank)
-	total_mention_token_bn_sig = singleton_mention_len_count(df_litbank)
+	total_mention_token_bn_sig = singleton_mention_len_count(df_bencoref)
 	total_mention_token_pre = mention_len_count(df_litbank)
 	total_mention_token_bn = mention_len_count(df_bencoref)
     
-	print("total token in singleton mention LitBank: {}\n".format(total_mention_token_bn))
-	print("total token in singleton mention BenCoref: {}\n".format(total_mention_token_bn))
+	print("total token in singleton mention LitBank: {}".format(total_mention_token_pre_sig))
+	print("total token in singleton mention BenCoref: {}\n".format(total_mention_token_bn_sig))
 
 	print("Without Singleton cluster:")
 	print("total mention (LitBank): {}".format(without_singleton))

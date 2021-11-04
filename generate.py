@@ -166,14 +166,11 @@ def count(d, key):
 
 if __name__ == "__main__":
 	bencoref_path = sys.argv[1]
-	preco_path = sys.argv[2]
+	litbank_path = sys.argv[2]
 	data = []
-	print("loading PreCo......")
-	with open((preco_path+'/train.jsonl')) as f:
-	    for line in f:
-	        data.append(json.loads(line))
+	print("loading LitBank......")
 
-	df_preco = pd.DataFrame(data)
+	df_litbank = pd.read_json((litbank_path+'/litBank.json'), encoding='utf8')
 
 	print("loading BenCoref......\n")
 	story_df = pd.read_json((bencoref_path+'/story.json'), encoding='utf8')
@@ -184,41 +181,41 @@ if __name__ == "__main__":
 
 	# size and property comparison
 	df_bencoref_clusters = Counter()
-	df_preco_clusters = Counter()
+	df_litbank_clusters = Counter()
 	df_bencoref_doc = Counter()
-	df_preco_doc = Counter()
+	df_litbank_doc = Counter()
 
 	mention_clusters_length(df_bencoref, df_bencoref_clusters)
-	mention_clusters_length(df_preco, df_preco_clusters)
+	mention_clusters_length(df_litbank, df_litbank_clusters)
 	sentences_length(df_bencoref, df_bencoref_doc)
-	sentences_length(df_preco, df_preco_doc)
-	print("Number Of Texts: \nPreCo Dataset: {}\nBenCoref Dataset: {}\n".format(len(df_preco), len(df_bencoref)))
-	print("Text Length (Number token in a text): \nPreCo Dataset: Max-> {}, Min-> {}".format(max(df_preco_doc), min(df_preco_doc)))
+	sentences_length(df_litbank, df_litbank_doc)
+	print("Number Of Texts: \nLitBank Dataset: {}\nBenCoref Dataset: {}\n".format(len(df_litbank), len(df_bencoref)))
+	print("Text Length (Number token in a text): \nLitBank Dataset: Max-> {}, Min-> {}".format(max(df_litbank_doc), min(df_litbank_doc)))
 	print("BenCoref Dataset: Max-> {}, Min-> {}\n".format(max(df_bencoref_doc), min(df_bencoref_doc)))
-	print("Mention Clusters Length: \nPreco Dataset: Max-> {}, Min-> {}".format(max(df_preco_clusters), min(df_preco_clusters)))
+	print("Mention Clusters Length: \nlitbank Dataset: Max-> {}, Min-> {}".format(max(df_litbank_clusters), min(df_litbank_clusters)))
 	print("BenCoref Dataset: Max-> {}, Min-> {}\n".format(max(df_bencoref_clusters), min(df_bencoref_clusters)))
 
 	total_tag_bencoref = sum(np.fromiter(df_bencoref_clusters.keys(), dtype=int)*np.fromiter(df_bencoref_clusters.values(), dtype=int))
-	total_tag_preco = sum(np.fromiter(df_preco_clusters.keys(), dtype=int)*np.fromiter(df_preco_clusters.values(), dtype=int))
-	print("Total Mention Clusters: \nPreCo Dataset: {}\nBenCoref Dataset: {}\n".format(sum(
-	    df_preco_clusters.values()), sum(df_bencoref_clusters.values())))
-	print("Total Mentions: \nPreCo Dataset: {}\nBenCoref Dataset: {}\n".format(total_tag_preco, total_tag_bencoref))
+	total_tag_litbank = sum(np.fromiter(df_litbank_clusters.keys(), dtype=int)*np.fromiter(df_litbank_clusters.values(), dtype=int))
+	print("Total Mention Clusters: \nLitBank Dataset: {}\nBenCoref Dataset: {}\n".format(sum(
+	    df_litbank_clusters.values()), sum(df_bencoref_clusters.values())))
+	print("Total Mentions: \nLitBank Dataset: {}\nBenCoref Dataset: {}\n".format(total_tag_litbank, total_tag_bencoref))
 
 	bn_tokens = total_token_count(df_bencoref)
-	pre_tokens = total_token_count(df_preco)
+	pre_tokens = total_token_count(df_litbank)
 
-	print("total tokens PreCo: {}".format(pre_tokens))
+	print("total tokens LitBank: {}".format(pre_tokens))
 	print("total tokens BenCoref: {}\n".format(bn_tokens))
 
-	without_singleton = total_tag_preco - df_preco_clusters[1]
-	cluster_without = sum(df_preco_clusters.values())-df_preco_clusters[1]
-	total_mention_token_pre = mention_len_count(df_preco)
+	without_singleton = total_tag_litbank - df_litbank_clusters[1]
+	cluster_without = sum(df_litbank_clusters.values())-df_litbank_clusters[1]
+	total_mention_token_pre = mention_len_count(df_litbank)
 	total_mention_token_bn = mention_len_count(df_bencoref)
 
 	print("Without Singleton cluster:")
-	print("total mention (PreCo): {}".format(without_singleton))
-	print("total cluster (PreCo): {}".format(cluster_without))
-	print("total token in mention PreCo: {}".format(total_mention_token_pre))
+	print("total mention (LitBank): {}".format(without_singleton))
+	print("total cluster (LitBank): {}".format(cluster_without))
+	print("total token in mention LitBank: {}".format(total_mention_token_pre))
 	print("total token in mention BenCoref: {}\n".format(total_mention_token_bn))
 
 	print_mean_std(story_df, "Story")
@@ -226,10 +223,10 @@ if __name__ == "__main__":
 
 	bn_cluster = sum(df_bencoref_clusters.values())
 	bn_percentage = calculate_cluster_percentage(df_bencoref_clusters, bn_cluster)
-	pre_percentage = calculate_cluster_percentage(df_preco_clusters, cluster_without)
+	pre_percentage = calculate_cluster_percentage(df_litbank_clusters, cluster_without)
 
 	label = ['Bengali']*len(bn_percentage)
-	label2 = ['PreCo']*len(pre_percentage)
+	label2 = ['LitBank']*len(pre_percentage)
 	bn_df = pd.DataFrame.from_dict(data={'Cluster size':list(bn_percentage.keys()),
 	                                     '%':list(bn_percentage.values()),
 	                                     'label':label})

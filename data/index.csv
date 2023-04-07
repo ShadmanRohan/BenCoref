@@ -1,0 +1,62 @@
+Title,Author Name,Ids,Type
+দেবী-কানন,বাংলাপিডিয়া,train_001,Biography
+মার্শম্যান জন ক্লার্ক,বাংলাপিডিয়া,train_002,Biography
+আমিনা বেগম,বাংলাপিডিয়া,train_003,Biography
+এলিস উইলিয়ম,বাংলাপিডিয়া,train_004,Biography
+তারাসুন্দরী,বাংলাপিডিয়া,train_005,Biography
+মিত্র শম্ভু,বাংলাপিডিয়া,train_006,Biography
+চৌধুরী আবদুল হালিম,বাংলাপিডিয়া,train_007,Biography
+দুদু মিয়া,বাংলাপিডিয়া,train_008,Biography
+শ্রীধর আচার্য,বাংলাপিডিয়া,train_009,Biography
+গোপাল ভাঁড়,বাংলাপিডিয়া,train_010,Biography
+খান হাতেম আলী,বাংলাপিডিয়া,train_011,Biography
+হোসেন সৈয়দ মোয়াজ্জেম,বাংলাপিডিয়া,train_012,Biography
+রায় ইন্দ্রলাল,বাংলাপিডিয়া,train_013,Biography
+আতীকুল্লাহ সাইয়িদ,বাংলাপিডিয়া,train_014,Biography
+শরফুদ্দীন খাজা শাহ্,বাংলাপিডিয়া,train_015,Biography
+আহমেদ কাজী হাবিবউদ্দিন,বাংলাপিডিয়া,train_016,Biography
+শাহ আবদুল্লাহ কিরমানী (রঃ),বাংলাপিডিয়া,train_017,Biography
+গঞ্জ,বাংলাপিডিয়া,train_018,Descriptive
+বিদ্যাকল্পদ্রুম বিশ্বকোষ,বাংলাপিডিয়া,train_019,Descriptive
+ইউরিয়া,বাংলাপিডিয়া,train_020,Descriptive
+চিংড়ি,বাংলাপিডিয়া,train_021,Descriptive
+ঋতু প্রথম অংশ,বাংলাপিডিয়া,train_022,Descriptive
+কবিতা ত্রৈমাসিক পত্রিকা,বাংলাপিডিয়া,train_023,Descriptive
+কাবাডি,বাংলাপিডিয়া,train_024,Descriptive
+ঢেঁকি,বাংলাপিডিয়া,train_025,Descriptive
+নীলকর,বাংলাপিডিয়া,train_026,Descriptive
+দর্জি,বাংলাপিডিয়া,train_027,Descriptive
+ঋতু দ্বিতীয় অংশ,বাংলাপিডিয়া,train_028,Descriptive
+উড়িষ্যা,বাংলাপিডিয়া,train_029,Descriptive
+ইলিশ,বাংলাপিডিয়া,train_030,Descriptive
+অটিজম,বাংলাপিডিয়া,train_031,Descriptive
+তিস্তা উপ-বদ্বীপ,বাংলাপিডিয়া,train_032,Descriptive
+গীতাঞ্জলি,বাংলাপিডিয়া,train_033,Descriptive
+একডালা,বাংলাপিডিয়া,train_034,Descriptive
+খাজনা,বাংলাপিডিয়া,train_035,Descriptive
+ক্যানসার,বাংলাপিডিয়া,train_036,Descriptive
+ময়নামতী প্রাসাদ টিলা,বাংলাপিডিয়া,train_037,Descriptive
+ইকতা,বাংলাপিডিয়া,train_038,Descriptive
+করাতি,বাংলাপিডিয়া,train_039,Descriptive
+জঙ্গলবাড়ি দুর্গ,বাংলাপিডিয়া,train_040,Descriptive
+মোয়াজ্জিন ত্রৈমাসিক সাহিত্য,বাংলাপিডিয়া,train_041,Descriptive
+ইজারাদার,বাংলাপিডিয়া,train_042,Descriptive
+ইনফ্লুয়েঞ্জা,বাংলাপিডিয়া,train_043,Descriptive
+তবলা,বাংলাপিডিয়া,train_044,Descriptive
+ইংরেজ,বাংলাপিডিয়া,train_045,Descriptive
+টঙ্ক আন্দোলন,বাংলাপিডিয়া,train_046,Descriptive
+কাসিমবাজার রাজ,বাংলাপিডিয়া,train_047,Descriptive
+দার্জিলিং,বাংলাপিডিয়া,train_048,Descriptive
+টুসু উৎসব,বাংলাপিডিয়া,train_049,Descriptive
+খোজা,বাংলাপিডিয়া,train_050,Descriptive
+একাদশী,বাংলাপিডিয়া,train_051,Descriptive
+ঈদুল ফিত্‌র,বাংলাপিডিয়া,train_052,Descriptive
+গায়ে হলুদ,বাংলাপিডিয়া,train_053,Descriptive
+কিশোরদের মন,দক্ষিণারঞ্জন মিত্র মজুমদার,train_054 to 063,Novel
+তিতাস একটি নদীর নাম/ খণ্ড তিতাস একটি নদীর নাম,অদ্বৈত মল্লবর্মণ,train_064 to 066,Novel
+অবরোধ-বাসিনী,বেগম রোকেয়া সাখাওয়াত হোসেন,train_067 to 090,Story
+মায়াবাঁশী,রবীন্দ্রনাথ মৈত্র,train_091 to 096,Story
+টুনটুনির বই,উপেন্দ্রকিশোর রায়চৌধুরী,train_097 to 117,Story
+বীরবলের হালখাতা/আমরা ও তোমরা,প্রমথ চৌধুরী,train_119,Story
+ঠাকুরমার ঝুলি/সাত ভাই চম্পা,দক্ষিণারঞ্জন মিত্র মজুমদার,train_121,Story
+"টিয়াপাখির বুদ্ধি, বোকা বুড়ি, উকিলের বুদ্ধি",সুকুমার রায়,"train_122, 120, 118",Story

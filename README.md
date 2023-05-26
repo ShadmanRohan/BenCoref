@@ -1,13 +1,13 @@
 # BenCoref: A Multi-Domain Dataset of Nominal Phrases and Pronominal Reference Annotations
 
 <p align="center">
-  <img width="460" height="300" src="assets/coref_trans.png">
+  <img width="350" height="300" src="assets/coref_trans.png">
 </p>
 
 
+Data Explorer: https://shadmanrohan-coref-reader-app-qk23tx.streamlit.app/
 
-
-### Data Format
+### Format
 
 There are 4 .json files in the /data/train directory, for training and development sets. In the files, each line is a JSON string that encodes a document. The JSON object has the following fields:
 
